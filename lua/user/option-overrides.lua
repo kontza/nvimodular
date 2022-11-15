@@ -28,3 +28,15 @@ vim.opt.wrap = true -- display lines as one long line
 vim.g.ansible_unindent_after_newline = true
 -- dkarter/bullets.vim
 vim.g.bullets_delete_last_bullet_if_empty = true
+-- lervag/wiki
+vim.g.wiki_root = "~/wiki"
+vim.g.wiki_filetypes = { "md" }
+vim.g.wiki_link_extension = ".md"
+vim.g.wiki_export = {
+	args = '-s -H $HOME/wiki/export.css -V "mainfont:Helvetica,sans-serif"',
+	from_format = "markdown",
+	ext = "html",
+	link_ext_replace = false,
+	view = true,
+	output = "export",
+}
