@@ -103,10 +103,14 @@ return packer.startup(function(use)
 
 	-- NOTE: Kontza's set
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use({ "folke/todo-comments.nvim" })
-  use({ "windwp/nvim-ts-autotag", config = function ()
-    require('nvim-ts-autotag').setup()
-  end})
+	use("folke/todo-comments.nvim")
+	use({
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	})
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
