@@ -17,10 +17,10 @@ end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
 ]])
 
 -- Use a protected call so we don't error out on first use
@@ -110,7 +110,6 @@ return packer.startup(function(use)
 			require("nvim-ts-autotag").setup()
 		end,
 	})
-	use("nvim-treesitter/nvim-treesitter-context")
 	use("pearofducks/ansible-vim")
 	use("dkarter/bullets.vim")
 	use("lervag/wiki")
@@ -136,6 +135,7 @@ return packer.startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-abolish")
 	use("khaveesh/vim-fish-syntax")
+	-- NOTE: Set ends
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
@@ -143,3 +143,4 @@ return packer.startup(function(use)
 		require("packer").sync()
 	end
 end)
+-- vim: set noai ts=4 sw=4:

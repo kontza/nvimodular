@@ -7,7 +7,6 @@ vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
 vim.opt.relativenumber = true
-vim.opt.showmode = true -- I want need to see things like -- INSERT
 vim.opt.showtabline = 0 -- do not show tabs
 vim.opt.wildignorecase = true
 vim.opt.wildignore = [[
@@ -40,3 +39,8 @@ vim.g.wiki_export = {
 	view = true,
 	output = "export",
 }
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 0
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.smarttab = true
