@@ -135,7 +135,6 @@ return packer.startup(function(use)
 	use("tpope/vim-sleuth")
 	use("tpope/vim-surround")
 	use("tpope/vim-abolish")
-	use("lervag/wiki.vim")
 	use("khaveesh/vim-fish-syntax")
 
 	-- Automatically set up your configuration after cloning packer.nvim
