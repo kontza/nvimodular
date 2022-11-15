@@ -124,6 +124,19 @@ return packer.startup(function(use)
 	use({ "junegunn/fzf.vim" })
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
 	use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
+	use({
+		"norcalli/nvim-colorizer.lua",
+		ft = { "scss", "css", "html" },
+		config = function()
+			require("colorizer").setup()
+		end,
+		disable = false,
+	})
+	use("tpope/vim-sleuth")
+	use("tpope/vim-surround")
+	use("tpope/vim-abolish")
+	use("lervag/wiki.vim")
+	use("khaveesh/vim-fish-syntax")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
