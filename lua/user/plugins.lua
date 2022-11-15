@@ -120,6 +120,11 @@ return packer.startup(function(use)
 			require("spaceless").setup()
 		end,
 	})
+	use({ "junegunn/fzf", run = ":call fzf#install()" })
+	use({ "junegunn/fzf.vim" })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
+	use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
