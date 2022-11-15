@@ -114,7 +114,12 @@ return packer.startup(function(use)
 	use("pearofducks/ansible-vim")
 	use("dkarter/bullets.vim")
 	use("lervag/wiki")
-
+	use({
+		"lewis6991/spaceless.nvim",
+		config = function()
+			require("spaceless").setup()
+		end,
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
