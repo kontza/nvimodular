@@ -101,8 +101,9 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" })
 	use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
 
-	-- Kontza's set
+	-- NOTE: Kontza's set
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "folke/todo-comments.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
