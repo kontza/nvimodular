@@ -111,6 +111,8 @@ return packer.startup(function(use)
 		end,
 	})
 	use("nvim-treesitter/nvim-treesitter-context")
+	use("pearofducks/ansible-vim")
+	use("dkarter/bullets.vim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

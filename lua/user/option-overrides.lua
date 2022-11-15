@@ -24,3 +24,7 @@ vim.opt.wildignore = [[
 */tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**"
 ]]
 vim.opt.wrap = true -- display lines as one long line
+-- pearofducks/ansible-vim
+vim.g.ansible_unindent_after_newline = true
+-- dkarter/bullets.vim
+vim.g.bullets_delete_last_bullet_if_empty = true
