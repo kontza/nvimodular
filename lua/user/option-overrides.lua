@@ -30,6 +30,7 @@ vim.g.bullets_delete_last_bullet_if_empty = true
 -- lervag/wiki
 vim.g.wiki_root = "~/wiki"
 vim.g.wiki_filetypes = { "md" }
+
 vim.g.wiki_link_extension = ".md"
 vim.g.wiki_export = {
 	args = '-s -H $HOME/wiki/export.css -V "mainfont:Helvetica,sans-serif"',
@@ -44,3 +45,5 @@ vim.opt.softtabstop = 0
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
+-- Fzf layout
+vim.g.fzf_preview_window = { "up,75%", "ctrl-/" }
