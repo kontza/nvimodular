@@ -5,6 +5,15 @@ if not status_ok then
 	return
 end
 
+local navic_ok, navic = pcall(require, "nvim-navic")
+local context = {}
+if navic_ok then
+	context = {
+		navic.get_location,
+		cond = navic.is_available,
+	}
+end
+
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
@@ -81,7 +90,7 @@ lualine.setup({
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = { file_info },
+		lualine_z = { file_info, context },
 	},
 	inactive_winbar = {
 		lualine_a = {},

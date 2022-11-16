@@ -135,6 +135,12 @@ return packer.startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-abolish")
 	use("khaveesh/vim-fish-syntax")
+	use({
+		"SmiteshP/nvim-navic",
+		config = function()
+			require("nvim-navic").setup({ highlight = true })
+		end,
+	})
 	-- NOTE: Set ends
 
 	-- Automatically set up your configuration after cloning packer.nvim
