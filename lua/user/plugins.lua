@@ -88,37 +88,6 @@ return packer.startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		-- commit = "76ea9a898d3307244dce3573392dcf2cc38f340f",
-		config = function()
-			local telescope = require("telescope")
-			local actions = require("telescope.actions")
-			telescope.setup({
-				defaults = {
-					prompt_prefix = " ",
-					selection_caret = " ",
-					path_display = { "smart" },
-					file_ignore_patterns = { ".git/", "node_modules" },
-
-					mappings = {
-						i = {
-							["<C-j>"] = actions.cycle_history_next,
-							["<C-k>"] = actions.cycle_history_prev,
-							["<Down>"] = actions.move_selection_next,
-							["<Up>"] = actions.move_selection_previous,
-						},
-					},
-				},
-				extensions = {
-					fzf = {
-						fuzzy = true, -- false will only do exact matching
-						override_generic_sorter = true, -- override the generic sorter
-						override_file_sorter = true, -- override the file sorter
-						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-						-- the default case_mode is "smart_case"
-					},
-				},
-			})
-			telescope.load_extension("fzf")
-		end,
 	})
 
 	-- Treesitter
