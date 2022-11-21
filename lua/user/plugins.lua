@@ -144,6 +144,7 @@ return packer.startup(function(use)
 			require("nvim-navic").setup({ highlight = true })
 		end,
 	})
+	use("simrat39/rust-tools.nvim")
 	-- NOTE: Set ends
 
 	-- Automatically set up your configuration after cloning packer.nvim

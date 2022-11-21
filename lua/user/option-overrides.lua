@@ -5,7 +5,7 @@
 vim.opt.breakindent = true
 vim.opt.linebreak = true
 vim.opt.list = true
-vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
+vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,nbsp:+"
 vim.opt.relativenumber = true
 vim.opt.showtabline = 0 -- do not show tabs
 vim.opt.wildignorecase = true
