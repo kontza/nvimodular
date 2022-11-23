@@ -56,10 +56,26 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+local tb_ok, tb = pcall(require, "telescope.builtin")
+if tb_ok then
+	local strat = { layout_strategy = "flex" }
+	keymap("n", "<leader>fe", function()
+		tb.current_buffer_fuzzy_find(strat)
+	end, opts)
+	keymap("n", "<leader>ff", function()
+		tb.find_files(strat)
+	end, opts)
+	keymap("n", "<leader>ft", function()
+		tb.live_grep(strat)
+	end, opts)
+	keymap("n", "<leader>fb", function()
+		tb.buffers(strat)
+	end, opts)
+end
+-- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+-- keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+-- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fc", "<cmd>let @+ = expand('%:p')<cr>", opts)
 
 -- Git
@@ -79,3 +95,4 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+-- vim: set noai ts=4 sw=4 :
