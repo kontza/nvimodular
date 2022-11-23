@@ -58,19 +58,10 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 local tb_ok, tb = pcall(require, "telescope.builtin")
 if tb_ok then
-	local strat = { layout_strategy = "flex" }
-	keymap("n", "<leader>fe", function()
-		tb.current_buffer_fuzzy_find(strat)
-	end, opts)
-	keymap("n", "<leader>ff", function()
-		tb.find_files(strat)
-	end, opts)
-	keymap("n", "<leader>ft", function()
-		tb.live_grep(strat)
-	end, opts)
-	keymap("n", "<leader>fb", function()
-		tb.buffers(strat)
-	end, opts)
+	keymap("n", "<leader>fe", tb.current_buffer_fuzzy_find, opts)
+	keymap("n", "<leader>ff", tb.find_files, opts)
+	keymap("n", "<leader>ft", tb.live_grep, opts)
+	keymap("n", "<leader>fb", tb.buffers, opts)
 end
 -- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 -- keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
