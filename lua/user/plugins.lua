@@ -140,7 +140,7 @@ return packer.startup(function(use)
 	})
 	use("tpope/vim-sleuth")
 	use("tpope/vim-surround")
-	use("tpope/vim-abolish")
+	-- use("tpope/vim-abolish")
 	use("khaveesh/vim-fish-syntax")
 	use({
 		"SmiteshP/nvim-navic",
@@ -149,6 +149,12 @@ return packer.startup(function(use)
 		end,
 	})
 	use("simrat39/rust-tools.nvim")
+	use({
+		"johmsalas/text-case.nvim",
+		config = function()
+			require("textcase").setup({})
+		end,
+	})
 	-- NOTE: Set ends
 
 	-- Automatically set up your configuration after cloning packer.nvim
