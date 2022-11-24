@@ -87,6 +87,9 @@ return packer.startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
+		config = function()
+			require("user.telescope")
+		end,
 		-- commit = "76ea9a898d3307244dce3573392dcf2cc38f340f",
 	})
 
@@ -109,6 +112,7 @@ return packer.startup(function(use)
 	use("folke/todo-comments.nvim")
 	use({
 		"windwp/nvim-ts-autotag",
+		after = "nvim-treesitter",
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
