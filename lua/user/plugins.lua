@@ -128,7 +128,7 @@ return packer.startup(function(use)
 	})
 	-- use({ "junegunn/fzf", run = ":call fzf#install()" })
 	-- use({ "junegunn/fzf.vim" })
-	local opt_path = fn.stdpath("data") .. "/site/pack/packer/opt/telescope-fzf-native"
+	local opt_path = fn.stdpath("data") .. "/site/pack/packer/opt/telescope-fzf-native.nvim"
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make -C " .. opt_path, cond = vim.fn.executable("make") == 1 })
 	use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
 	use({
