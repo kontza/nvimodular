@@ -62,6 +62,7 @@ if tb_ok then
 	keymap("n", "<leader>ff", tb.find_files, opts)
 	keymap("n", "<leader>ft", tb.live_grep, opts)
 	keymap("n", "<leader>fb", tb.buffers, opts)
+	keymap("n", "<leader>fm", tb.filetypes, opts)
 end
 -- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 -- keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
