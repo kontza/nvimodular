@@ -1,54 +1,18 @@
 local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
-	return
+  return
 end
-indent_blankline.setup({
-	indentline_enabled = 1,
-	char = "▏",
-	filetype_exclude = {
-		"startify",
-		"dashboard",
-		"dotooagenda",
-		"log",
-		"fugitive",
-		"gitcommit",
-		"packer",
-		"vimwiki",
-		"markdown",
-		"json",
-		"txt",
-		"vista",
-		"help",
-		"todoist",
-		"NvimTree",
-		"neo-tree",
-		"peekaboo",
-		"git",
-		"TelescopePrompt",
-		"undotree",
-		"flutterToolsOutline",
-		"", -- for all buffers without a file type
-	},
-	show_trailing_blankline_indent = false,
-	show_first_indent_level = true,
-	use_treesitter = true,
-	show_current_context = true,
-	show_current_context_start = true,
-	buftype_exclude = { "terminal", "nofile" },
-	char_list = { "|", "¦", "┆", "┊" },
-	space_char = " ",
-	space_char_blankline = " ",
-	context_patterns = {
-		"class",
-		"function",
-		"method",
-		"block",
-		"list_literal",
-		"selector",
-		"^if",
-		"^table",
-		"if_statement",
-		"while",
-		"for",
-	},
-})
+
+indent_blankline.setup {
+  char = "▏",
+  show_trailing_blankline_indent = false,
+  show_first_indent_level = true,
+  use_treesitter = true,
+  show_current_context = true,
+  buftype_exclude = { "terminal", "nofile" },
+  filetype_exclude = {
+    "help",
+    "packer",
+    "NvimTree",
+  },
+}
