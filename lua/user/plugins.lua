@@ -84,17 +84,6 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 
-	-- Telescope
-	use({ "junegunn/fzf", run = ":call fzf#install()" })
-	use({ "junegunn/fzf.vim" })
-	use({
-		"nvim-telescope/telescope.nvim",
-		config = function()
-			require("user.telescope")
-		end,
-		-- commit = "76ea9a898d3307244dce3573392dcf2cc38f340f",
-	})
-
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -128,14 +117,6 @@ return packer.startup(function(use)
 			require("spaceless").setup()
 		end,
 	})
-	-- use({ "junegunn/fzf", run = ":call fzf#install()" })
-	-- use({ "junegunn/fzf.vim" })
-	local opt_path = fn.stdpath("data") .. "/site/pack/packer/opt/telescope-fzf-native.nvim"
-	use({
-		"nvim-telescope/telescope-fzf-native.nvim",
-		run = "make -C " .. opt_path,
-		cond = vim.fn.executable("make") == 1,
-	})
 	use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
 	use({
 		"norcalli/nvim-colorizer.lua",
@@ -162,6 +143,13 @@ return packer.startup(function(use)
 			require("textcase").setup({})
 		end,
 	})
+	-- Telescope
+	use({ "nvim-telescope/telescope.nvim" })
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
+
 	-- NOTE: Set ends
 
 	-- Automatically set up your configuration after cloning packer.nvim

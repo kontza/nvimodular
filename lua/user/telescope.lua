@@ -3,11 +3,13 @@ if not status_ok then
 	return
 end
 
-local actions = require("telescope.actions")
+local act_ok, actions = pcall(require, "telescope.actions")
+if not act_ok then
+	return
+end
 
 telescope.setup({
 	defaults = {
-
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "truncate" },
