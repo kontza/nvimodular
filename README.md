@@ -26,6 +26,9 @@ make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
 
+## Install prerequisites
+You need `npm` installed before LSPs start working properly.
+
 ## Install the config
 
 Make sure to remove or move your current `nvim` directory
