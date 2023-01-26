@@ -36,7 +36,9 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.rustfmt,
 		formatting.google_java_format,
-		diagnostics.flake8,
+		diagnostics.flake8.with({
+			args = { "--max-line-length", "88", "--format", "default", "--stdin-display-name", "$FILENAME", "-" },
+		}),
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
