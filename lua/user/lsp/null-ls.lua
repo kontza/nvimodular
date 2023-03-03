@@ -39,6 +39,8 @@ null_ls.setup({
 		diagnostics.flake8.with({
 			args = { "--max-line-length", "88", "--format", "default", "--stdin-display-name", "$FILENAME", "-" },
 		}),
+		diagnostics.tidy,
+		formatting.xmllint,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
