@@ -98,4 +98,9 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opt
 -- Textcase
 keymap({ "n", "v" }, "gaa", "<cmd>TextCaseOpenTelescopeQuickChange<CR>", { desc = "Telescope Quick Change" })
 keymap({ "n", "v" }, "gai", "<cmd>TextCaseOpenTelescopeLSPChange<CR>", { desc = "Telescope LSP Change" })
+keymap({ "n", "v" }, "ga.", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+
+-- Telescope keymaps
+keymap("n", "<leader>km", ":Telescope keymaps<CR>", opts)
+
 -- vim: set noai ts=4 sw=4 :

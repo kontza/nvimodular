@@ -141,6 +141,7 @@ return packer.startup(function(use)
 		"johmsalas/text-case.nvim",
 		config = function()
 			require("textcase").setup({})
+			require("telescope").load_extension("textcase")
 		end,
 	})
 	-- Better quick-fix
